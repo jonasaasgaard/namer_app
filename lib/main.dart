@@ -131,6 +131,13 @@ class FavoritesPage extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text(pair.asLowerCase),
+            trailing: IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                appState.favorites.remove(pair);
+                appState.notifyListeners();
+              },
+            ),
           ),
       ],
     );
